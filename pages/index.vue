@@ -1,89 +1,203 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+  <v-container grid-list-xlfluid>
+    <v-layout row wrap>
+      <v-col cols="12">
+        <v-toolbar color="#c3aed6" class="main-header-color">
+          <v-card-title class="headline font-weight-bold">
+            ภาวะกลืนลำบาก
+          </v-card-title>
+        </v-toolbar>
+
+        <v-card height="100%">
+          <v-alert
+            border="bottom"
+            colored-border
+            class="header-color"
+            color="#ffe78f"
+            elevation="2"
+            ><h4>กลืนลำบาก บำบัดไม่ยาก หากรู้วิธี.</h4>
+          </v-alert>
+          <v-row align="center" class="mx-2">
+            <v-col cols="12" md="4">
+              <v-card class="mx-auto" outlined color="#c3aed6">
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1 header-color">
+                      ความรู้ทั่วไป
+                    </v-list-item-title>
+                  </v-list-item-content>
+                  <v-icon size="85px" color="#ffe78f">mdi-jabber </v-icon>
+                </v-list-item>
+
+                <v-card-actions>
+                  <v-btn
+                    outlined
+                    rounded
+                    color="#ffe78f"
+                    to="/class1"
+                    target="_blank"
+                    nuxt
+                  >
+                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
+                    <h3>เลือก</h3>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" md="4">
+              <v-card class="mx-auto" outlined color="#c3aed6">
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1 header-color">
+                      การบำบัดฟื้นฟู
+                    </v-list-item-title>
+                  </v-list-item-content>
+                  <v-icon size="85px" color="#ffe78f"
+                    >mdi-calendar-heart
+                  </v-icon>
+                </v-list-item>
+
+                <v-card-actions>
+                  <v-btn
+                    outlined
+                    rounded
+                    color="#ffe78f"
+                    to="/class2"
+                    target="_blank"
+                    nuxt
+                  >
+                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
+                    <h3>เลือก</h3>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" md="4">
+              <v-card class="mx-auto" outlined color="#c3aed6">
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1 header-color">
+                      อาหารฝึกกลืน
+                    </v-list-item-title>
+                  </v-list-item-content>
+                  <v-icon size="85px" color="#ffe78f">mdi-food </v-icon>
+                </v-list-item>
+
+                <v-card-actions>
+                  <v-btn
+                    outlined
+                    rounded
+                    color="#ffe78f"
+                    to="/class3"
+                    target="_blank"
+                    nuxt
+                  >
+                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
+                    <h3>เลือก</h3>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" md="4">
+              <v-card class="mx-auto" outlined color="#c3aed6">
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1 header-color">
+                      การฝึกหายใจและการฝึกกลืน
+                    </v-list-item-title>
+                  </v-list-item-content>
+                  <v-icon size="85px" color="#ffe78f">mdi-airballoon </v-icon>
+                </v-list-item>
+
+                <v-card-actions>
+                  <v-btn
+                    outlined
+                    rounded
+                    color="#ffe78f"
+                    to="/class4"
+                    target="_blank"
+                    nuxt
+                  >
+                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
+                    <h3>เลือก</h3>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" md="4">
+              <v-card class="mx-auto" outlined color="#c3aed6">
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1 header-color">
+                      การทำความสะอาดช่องปาก
+                    </v-list-item-title>
+                  </v-list-item-content>
+                  <v-icon size="85px" color="#ffe78f"
+                    >mdi-toothbrush-paste
+                  </v-icon>
+                </v-list-item>
+
+                <v-card-actions>
+                  <v-btn
+                    outlined
+                    rounded
+                    color="#ffe78f"
+                    to="/class5"
+                    target="_blank"
+                    nuxt
+                  >
+                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
+                    <h3>เลือก</h3>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" md="4">
+              <v-card class="mx-auto" outlined color="#c3aed6">
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1 header-color">
+                      ติดต่อเรา
+                    </v-list-item-title>
+                  </v-list-item-content>
+                  <v-icon size="85px" color="#ffe78f"
+                    >mdi-hospital-building
+                  </v-icon>
+                </v-list-item>
+
+                <v-card-actions>
+                  <v-btn
+                    outlined
+                    rounded
+                    color="#ffe78f"
+                    to="/class6"
+                    target="_blank"
+                    nuxt
+                  >
+                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
+                    <h3>เลือก</h3>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
+  components: {},
 }
 </script>
+<style scoped>
+.header-color {
+  color: #be5683;
+}
+
+.main-header-color {
+  color: #ffe78f;
+}
+</style>
