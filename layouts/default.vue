@@ -20,7 +20,10 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class="main-header-color" v-text="item.title" />
+            <v-list-item-title
+              class="main-header-color font-weight-bold"
+              v-text="item.title"
+            />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -36,6 +39,7 @@
       <!-- <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn> -->
+      <v-avatar> <img src="@/assets/hy/logo.jpg" alt="John" /> </v-avatar>&nbsp;
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
@@ -60,8 +64,7 @@
     <v-footer :absolute="!fixed" app color="#8675a9" dark>
       <span
         >&copy; {{ new Date().getFullYear() }}
-        กลุ่มงานเวชกรรมฟื้นฟู โรงพยาบาลหาดใหญ่ 182 ถ.รัถการ ต.หาดใหญ่ อ.หาดใหญ่
-        จ. สงขลา โทร074-273100 ต่อ 8207
+        กลุ่มงานเวชกรรมฟื้นฟู โรงพยาบาลหาดใหญ่ โทร 074-273100 ต่อ 8207
       </span>
     </v-footer>
   </v-app>
@@ -76,15 +79,15 @@ export default {
       fixed: true,
       items: [
         {
-          icon: 'mdi-video-plus-outline',
+          icon: 'mdi-desktop-mac-dashboard ',
           title: 'หน้าแรก',
           to: '/',
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Inspire',
+        //   to: '/inspire',
+        // },
       ],
       miniVariant: false,
       right: false,

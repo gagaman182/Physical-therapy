@@ -32,7 +32,6 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    rounded
                     color="#ffe78f"
                     to="/class1"
                     target="_blank"
@@ -60,7 +59,6 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    rounded
                     color="#ffe78f"
                     to="/class2"
                     target="_blank"
@@ -86,7 +84,6 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    rounded
                     color="#ffe78f"
                     to="/class3"
                     target="_blank"
@@ -112,7 +109,6 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    rounded
                     color="#ffe78f"
                     to="/class4"
                     target="_blank"
@@ -140,7 +136,6 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    rounded
                     color="#ffe78f"
                     to="/class5"
                     target="_blank"
@@ -168,7 +163,6 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    rounded
                     color="#ffe78f"
                     to="/class6"
                     target="_blank"

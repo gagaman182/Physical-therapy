@@ -11,13 +11,89 @@
       </v-toolbar>
     </v-col>
 
-    <v-col cols="12" class="text-center">
-      <youtube video-id="JzRMxbTf-bc" ref="youtube"></youtube
-    ></v-col>
+    <v-col cols="12">
+      <v-card class="mx-auto" outlined>
+        <v-list-item three-line>
+          <v-list-item-content>
+            <v-row>
+              <v-col cols="10"
+                ><v-list-item-title class="headline mb-1">
+                  Dysphagia Introduction ภาวะกลืนลำบาก
+                </v-list-item-title></v-col
+              >
+
+              <v-col cols="2">
+                <v-icon size="85px" color="#ffe78f"
+                  >mdi-video-high-definition
+                </v-icon>
+                <!-- <v-checkbox
+                  v-model="seevideo"
+                  @change="noblur"
+                  label="ดูคลิปวีดีโอ"
+                  color="#efbbcf"
+                ></v-checkbox> -->
+              </v-col>
+            </v-row>
+
+            <!-- <v-list-item-subtitle>ภาวะกลืนลำบาก</v-list-item-subtitle> -->
+
+            <div v-blur="blurConfig" class="text-center">
+              <youtube
+                video-id="FKTDePIin1U"
+                ref="youtube"
+                width="80%"
+                height="700px"
+                disabled
+              ></youtube>
+
+              <!-- <button @click="playVideo">play</button> -->
+            </div>
+          </v-list-item-content>
+        </v-list-item>
+      </v-card>
+    </v-col>
   </v-row>
 </template>
+<script>
+export default {
+  name: 'class1',
+
+  data() {
+    return {
+      isBlurred: true,
+
+      blurConfig: {
+        isBlurred: false,
+        opacity: 0.1,
+        filter: 'blur(1.8px)',
+        transition: 'all .3s linear',
+      },
+      seevideo: false,
+    }
+  },
+  methods: {
+    noblur() {
+      this.blurConfig.isBlurred = !this.blurConfig.isBlurred
+      this.isBlurred = !this.isBlurred
+    },
+    // playVideo() {
+    //   this.$refs.youtube.player.playVideo()
+    // },
+  },
+  computed: {
+    player() {
+      return this.$refs.youtube.player
+    },
+  },
+}
+</script>
+
 <style scoped>
 .main-header-color {
   color: #ef4f4f;
+}
+iframe {
+  width: 100%;
+  max-width: 650px; /* Also helpful. Optional. */
 }
 </style>
