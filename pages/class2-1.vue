@@ -4,9 +4,9 @@
       <v-toolbar color="#efbbcf" class="main-header-color">
         <v-card-title class="headline font-weight-bold">
           <v-icon class="text--darken-2 main-header-color" medium
-            >mdi-airballoon
+            >mdi-calendar-heart
           </v-icon>
-          &nbsp; การฝึกหายใจและการฝึกไอ
+          &nbsp; การบำบัดฟื้นฟู
         </v-card-title>
       </v-toolbar>
       <v-alert

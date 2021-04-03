@@ -12,79 +12,41 @@
     </v-col>
 
     <v-col cols="12">
-      <v-card class="mx-auto" outlined>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <v-row>
-              <v-col cols="10"
-                ><v-list-item-title class="headline mb-1">
-                  Dysphagia Introduction ภาวะกลืนลำบาก
-                </v-list-item-title></v-col
-              >
-
-              <v-col cols="2">
-                <v-icon size="85px" color="#ffe78f"
-                  >mdi-video-high-definition
-                </v-icon>
-                <!-- <v-checkbox
-                  v-model="seevideo"
-                  @change="noblur"
-                  label="ดูคลิปวีดีโอ"
-                  color="#efbbcf"
-                ></v-checkbox> -->
-              </v-col>
-            </v-row>
-
-            <!-- <v-list-item-subtitle>ภาวะกลืนลำบาก</v-list-item-subtitle> -->
-
-            <div v-blur="blurConfig" class="text-center">
-              <youtube
-                video-id="FKTDePIin1U"
-                ref="youtube"
-                width="80%"
-                height="700px"
-                disabled
-              ></youtube>
-
-              <!-- <button @click="playVideo">play</button> -->
-            </div>
-          </v-list-item-content>
-        </v-list-item>
-      </v-card>
+      <div class="columns is-mobile" v-for="item in items" :key="item.videoid1">
+        <videos
+          :videoid="item.videoid"
+          :title="item.title"
+          :content="item.content"
+          :icon="item.icon"
+          :classes="item.classes"
+        ></videos>
+      </div>
     </v-col>
   </v-row>
 </template>
 <script>
+import videos from '@/components/video'
 export default {
   name: 'class1',
-
+  components: {
+    videos,
+  },
   data() {
     return {
-      isBlurred: true,
-
-      blurConfig: {
-        isBlurred: false,
-        opacity: 0.1,
-        filter: 'blur(1.8px)',
-        transition: 'all .3s linear',
-      },
-      seevideo: false,
+      items: [
+        {
+          classes: '1',
+          videoid: 'FKTDePIin1U',
+          icon: 'mdi-video-high-definition',
+          title: ' Dysphagia Introduction ภาวะกลืนลำบาก',
+          subtitle: '',
+        },
+      ],
     }
   },
-  methods: {
-    noblur() {
-      this.blurConfig.isBlurred = !this.blurConfig.isBlurred
-      this.isBlurred = !this.isBlurred
-    },
-    // playVideo() {
-    //   this.$refs.youtube.player.playVideo()
-    // },
-  },
-  computed: {
-    player() {
-      return this.$refs.youtube.player
-    },
-  },
+  methods: {},
+
+  mounted() {},
 }
 </script>
 
@@ -95,5 +57,8 @@ export default {
 iframe {
   width: 100%;
   max-width: 650px; /* Also helpful. Optional. */
+}
+#youtube {
+  pointer-events: none;
 }
 </style>
