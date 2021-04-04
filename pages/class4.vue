@@ -18,135 +18,51 @@
         ><h3>Breathing Exercise2 and Cough Training</h3>
       </v-alert>
     </v-col>
-    <!-- video1 -->
+
     <v-col cols="12">
-      <v-card class="mx-auto" outlined>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <v-row>
-              <v-col cols="10"
-                ><v-list-item-title class="headline mb-1">
-                  Cough Training (ท่าฝึกการไอสำหรับผู้ป่วยกลืนลำบาก)
-                </v-list-item-title>
-                <div class="my-4 subtitle-1">
-                  ระบบหายใจที่ดี สัมพันธ์กับการกลืนที่ดีเช่นเดียวกัน
-                </div></v-col
-              >
-
-              <v-col cols="2">
-                <v-icon size="85px" color="#ffe78f"
-                  >mdi-video-high-definition
-                </v-icon>
-                <v-checkbox
-                  v-model="seevideo1"
-                  @change="noblur1"
-                  label="ดูคลิปวีดีโอ"
-                  color="#efbbcf"
-                ></v-checkbox>
-              </v-col>
-            </v-row>
-
-            <!-- <v-list-item-subtitle>ภาวะกลืนลำบาก</v-list-item-subtitle> -->
-
-            <div v-blur="blurConfig1" class="text-center">
-              <youtube
-                video-id="Drz3xtM_MMc"
-                ref="youtube"
-                width="80%"
-                height="700px"
-                disabled
-              ></youtube>
-
-              <!-- <button @click="playVideo">play</button> -->
-            </div>
-          </v-list-item-content>
-        </v-list-item>
-      </v-card>
-    </v-col>
-    <!-- video2 -->
-    <v-col cols="12">
-      <v-card class="mx-auto" outlined>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <v-row>
-              <v-col cols="10"
-                ><v-list-item-title class="headline mb-1">
-                  Breathing Exercise2 การฝึกการหายใจท่าที่ 2
-                </v-list-item-title>
-                <div class="my-4 subtitle-1">
-                  การหายใจกับการกลืนมีความสัมพันธ์กัน การฝึกหายใจเป็นจังหวะที่ดี
-                  จะช่วยให้การกลืนปลอดภัยเช่นเดียวกัน
-                </div></v-col
-              >
-
-              <v-col cols="2">
-                <v-icon size="85px" color="#ffe78f"
-                  >mdi-video-high-definition
-                </v-icon>
-                <v-checkbox
-                  v-model="seevideo2"
-                  @change="noblur2"
-                  label="ดูคลิปวีดีโอ"
-                  color="#efbbcf"
-                ></v-checkbox>
-              </v-col>
-            </v-row>
-
-            <!-- <v-list-item-subtitle>ภาวะกลืนลำบาก</v-list-item-subtitle> -->
-
-            <div v-blur="blurConfig2" class="text-center">
-              <youtube
-                video-id="HsOzr8sIxHs"
-                ref="youtube"
-                width="80%"
-                height="700px"
-                disabled
-              ></youtube>
-
-              <!-- <button @click="playVideo">play</button> -->
-            </div>
-          </v-list-item-content>
-        </v-list-item>
-      </v-card>
+      <div class="columns is-mobile" v-for="item in items" :key="item.videoid1">
+        <videos
+          :videoid="item.videoid"
+          :title="item.title"
+          :content="item.content"
+          :icon="item.icon"
+          :classes="item.classes"
+        ></videos>
+      </div>
     </v-col>
   </v-row>
 </template>
 <script>
+import videos from '@/components/video'
 export default {
-  name: 'class4',
-
+  name: 'class1',
+  components: {
+    videos,
+  },
   data() {
     return {
-      blurConfig1: {
-        isBlurred: true,
-        opacity: 0.1,
-        filter: 'blur(1.8px)',
-        transition: 'all .3s linear',
-      },
-      blurConfig2: {
-        isBlurred: true,
-        opacity: 0.1,
-        filter: 'blur(1.8px)',
-        transition: 'all .3s linear',
-      },
-
-      seevideo1: false,
-      seevideo2: false,
+      items: [
+        {
+          classes: '1',
+          videoid: 'Drz3xtM_MMc',
+          icon: 'mdi-video-high-definition',
+          title: ' Cough Training (ท่าฝึกการไอสำหรับผู้ป่วยกลืนลำบาก)',
+          subtitle: 'ระบบหายใจที่ดี สัมพันธ์กับการกลืนที่ดีเช่นเดียวกัน',
+        },
+        {
+          classes: '2',
+          videoid: 'HsOzr8sIxHs',
+          icon: 'mdi-video-high-definition',
+          title: ' Breathing Exercise2 การฝึกการหายใจท่าที่ 2',
+          subtitle:
+            '    การหายใจกับการกลืนมีความสัมพันธ์กัน การฝึกหายใจเป็นจังหวะที่ดีจะช่วยให้การกลืนปลอดภัยเช่นเดียวกัน',
+        },
+      ],
     }
   },
-  methods: {
-    noblur1() {
-      this.blurConfig1.isBlurred = !this.blurConfig1.isBlurred
-    },
-    noblur2() {
-      this.blurConfig2.isBlurred = !this.blurConfig2.isBlurred
-    },
-  },
-  computed: {
-    player() {
-      return this.$refs.youtube.player
-    },
-  },
+  methods: {},
+
+  mounted() {},
 }
 </script>
 
@@ -154,11 +70,11 @@ export default {
 .main-header-color {
   color: #ef4f4f;
 }
-.header-color {
-  color: #be5683;
-}
 iframe {
   width: 100%;
   max-width: 650px; /* Also helpful. Optional. */
+}
+#youtube {
+  pointer-events: none;
 }
 </style>

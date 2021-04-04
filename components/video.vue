@@ -1,5 +1,5 @@
 <template>
-
+ <v-col cols="12">
  <v-card class="mx-auto" outlined>
         <v-list-item three-line>
           <v-list-item-content>
@@ -11,6 +11,7 @@
                 <!-- <div class="my-4 subtitle-1"  >
                    {{subtitle}}
                   </div> -->
+                  
                   <div v-html="subtitle" class="my-4 subtitle-1" ></div></v-col
               ></br>
               
@@ -27,9 +28,9 @@
                 ></v-checkbox>
               </v-col>
             </v-row>
-
-          
+            <div class="title text-center text " v-bind:style="{ backgroundColor: statecolor}">สถานะการเล่นวิดีโอ: {{state}}</div>
             <div v-blur="blurConfig" class="text-center">
+              
               <youtube
                 id="youtube"
                 :video-id="videoid"
@@ -44,7 +45,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-card>
-  
+  </v-col>
   
 </template>
 <script>
@@ -85,7 +86,9 @@ export default {
         transition: 'all .3s linear',
       },
       seevideo: false,
-      state: null,
+      state:"ยังไม่เล่น",
+      statecolor:'#fa1e0e'
+    
     }
   },
   methods: {
@@ -96,37 +99,51 @@ export default {
 
       if (this.blurConfig.isBlurred) {
         this.pauseVideos()
+        this.statecolor = '#e97878'
+        
       } else if (!this.blurConfig.isBlurred) {
         this.playVideos()
+        this.statecolor = '#94ebcd'
       }
     },
     //ปุ่มให้เล่น
     playVideos() {
       this.$refs.youtube.player.playVideo()
+       this.statecolor = '#94ebcd'
     },
     //ปุ่มให้หยุด
     pauseVideos() {
       this.$refs.youtube.player.pauseVideo()
+      
     },
     //สถานะเล่น
     playing() {
-      alert('กำลังเล่น')
+      this.state = 'กำลังเล่น'
+      this.statecolor = '#94ebcd'
+      //alert('กำลังเล่น')
     },
     //สถานะหยุด
     paused() {
-      alert('หยุดเล่น')
+       this.state = 'หยุดเล่น'
+      //alert('หยุดเล่น')
+       this.statecolor = '#e97878'
     },
     //สถานะจบ
     ended() {
-      alert('จบการเล่น')
+      this.state = 'จบการเล่น'
+      //alert('จบการเล่น')
+       this.statecolor = '#e97878'
     },
   },
 
   mounted() {
     if (this.blurConfig.isBlurred) {
       this.pauseVideos()
+      this.statecolor = '#e97878'
+      
     } else if (!this.blurConfig.isBlurred) {
       this.playVideos()
+        this.statecolor = '#94ebcd'
     }
   },
 }
@@ -134,7 +151,7 @@ export default {
 
 <style scoped>
 .main-header-color {
-  color: #ef4f4f;
+  color: #e97878;
 }
 iframe {
   width: 100%;
@@ -143,4 +160,6 @@ iframe {
 #youtube {
   pointer-events: none;
 }
+
+
 </style>

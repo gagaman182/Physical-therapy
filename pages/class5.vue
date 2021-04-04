@@ -3,8 +3,8 @@
     <v-col cols="12" class="text-center">
       <v-toolbar color="#efbbcf" class="main-header-color">
         <v-card-title class="headline font-weight-bold">
-          <v-icon class="text--darken-2 main-header-color" medium>
-            mdi-toothbrush-paste
+          <v-icon class="text--darken-2 main-header-color" medium
+            >mdi-toothbrush-paste
           </v-icon>
           &nbsp; การทำความสะอาดช่องปาก
         </v-card-title>
@@ -12,68 +12,42 @@
     </v-col>
 
     <v-col cols="12">
-      <v-card class="mx-auto" outlined>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <v-list-item-title class="headline mb-1">
-              การทำความสะอาดช่องปาก
-            </v-list-item-title>
-            <v-list-item-subtitle>การทำความสะอาดช่องปาก</v-list-item-subtitle>
-
-            <div v-blur="blurConfig" class="text-center">
-              <youtube
-                video-id="JzRMxbTf-bc"
-                ref="youtube"
-                width="80%"
-                height="700px"
-                disabled
-              ></youtube>
-
-              <!-- <button @click="playVideo">play</button> -->
-            </div>
-            <v-checkbox
-              v-model="seevideo"
-              @change="noblur"
-              label="ดูคลิปวีดีโอ"
-              color="#efbbcf"
-            ></v-checkbox>
-          </v-list-item-content>
-        </v-list-item>
-      </v-card>
+      <div class="columns is-mobile" v-for="item in items" :key="item.videoid1">
+        <videos
+          :videoid="item.videoid"
+          :title="item.title"
+          :content="item.content"
+          :icon="item.icon"
+          :classes="item.classes"
+        ></videos>
+      </div>
     </v-col>
   </v-row>
 </template>
 <script>
+import videos from '@/components/video'
 export default {
   name: 'class5',
-
+  components: {
+    videos,
+  },
   data() {
     return {
-      isBlurred: true,
-
-      blurConfig: {
-        isBlurred: true,
-        opacity: 0.1,
-        filter: 'blur(1.8px)',
-        transition: 'all .3s linear',
-      },
-      seevideo: false,
+      items: [
+        {
+          classes: '1',
+          videoid: 'RjorFPINfCc',
+          icon: 'mdi-video-high-definition',
+          title: ' Oral Hygiene การทำความสะอาดช่องปากผู้ป่วยโรคหลอดเลือดสมอง',
+          subtitle:
+            'ความสะอาดในช่องปากเป็นสิ่งสำคัญลำดับต้น ๆ สำหรับผู้ป่วยโรคหลอดเลือดสมอง ในระยะแรก ๆ โดยเฉพาะผู้ป่วยที่ยังไม่สามารถรับประทานทางปาก หรือมีภาวะกลืนลำบากได้ <br/> <p class="font-weight-black">วัตถุประสงค์ของการทำความสะอาดในช่องปาก</p><br/>- ป้องกันภาวะแทรกซ้อน ภาวะติดเชื้อในปอดจากการสำลักแบคทีเรียในช่องปาก<br /> - สร้างสุขลักษณะที่ดี<br/>- ส่งเสริมคุณภาพชีวิตที่ดี<br/>- เพิ่มโอกาสการฟื้นฟูภาวะกลืนลำบาก',
+        },
+      ],
     }
   },
-  methods: {
-    noblur() {
-      this.blurConfig.isBlurred = !this.blurConfig.isBlurred
-      this.isBlurred = !this.isBlurred
-    },
-    // playVideo() {
-    //   this.$refs.youtube.player.playVideo()
-    // },
-  },
-  computed: {
-    player() {
-      return this.$refs.youtube.player
-    },
-  },
+  methods: {},
+
+  mounted() {},
 }
 </script>
 
@@ -84,5 +58,8 @@ export default {
 iframe {
   width: 100%;
   max-width: 650px; /* Also helpful. Optional. */
+}
+#youtube {
+  pointer-events: none;
 }
 </style>
