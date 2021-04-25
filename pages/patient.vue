@@ -29,6 +29,18 @@
                     >กรุณาเลือกอาการของท่าน (เลือกได้มากกว่า 1
                     ข้อ)</v-toolbar-title
                   >
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    :loading="loading"
+                    x-large
+                    class="ma-1"
+                    color="#ff79cd"
+                    @click="refresh"
+                    align="end"
+                    dark
+                  >
+                    <v-icon medium>mdi-refresh </v-icon>
+                  </v-btn>
                 </v-toolbar>
               </v-col>
               <v-col cols="12"
@@ -41,7 +53,7 @@
                   เมื่อผู้รับบริการเลือกระบบจะลิงค์ไปยังวิธีการบำบัดฟื้นฟูที่ต้องฝึกตามตัวเลขด้านหลัง
                 </v-alert>
               </v-col>
-              <v-col cols="12">
+              <v-col cols="12" v-if="showcheck">
                 <v-row class="light--text">
                   <v-col cols="6" class="text-center">
                     <h4>เลือกอาการ</h4>
@@ -101,13 +113,19 @@
                       -กลืนไม่ลง
                     </p>
                   </v-col>
-                  <v-col cols="1" class="button">
-                    <v-btn class="ma-2" color="#d8f8b7" @click="runvideo">
-                      <div class="header-color font-weight-bold">ประมวลผล</div>
+                  <v-col cols="12" class="button" align="center">
+                    <v-btn
+                      class="ma-2"
+                      color="#ce1f6a"
+                      @click="runvideo"
+                      x-large
+                      dark
+                    >
+                      <div class="font-weight-bold">ประมวลผล</div>
                     </v-btn>
                   </v-col>
-                  <v-col cols="3"> </v-col>
-                  <v-col cols="8"> </v-col>
+                  <!-- <v-col cols="3"> </v-col>
+                  <v-col cols="8"> </v-col> -->
                 </v-row>
               </v-col>
             </v-row>
@@ -140,7 +158,7 @@ export default {
   data() {
     return {
       showvideo: false,
-
+      showcheck: true,
       checkclass1: '',
       checkclass2: '',
       checkclass3: '',
@@ -248,6 +266,7 @@ export default {
           this.items[5].videoselect = true
           this.items[6].videoselect = true
           this.items[7].videoselect = true
+          this.showcheck = false
         } else if (this.checkclass1 && this.checkclass2) {
           this.items[0].videoselect = true
           this.items[1].videoselect = true
@@ -257,6 +276,7 @@ export default {
           this.items[5].videoselect = true
           this.items[6].videoselect = true
           this.items[7].videoselect = true
+          this.showcheck = false
         } else if (this.checkclass1 && this.checkclass3) {
           this.items[0].videoselect = true
           this.items[1].videoselect = true
@@ -266,6 +286,7 @@ export default {
           this.items[5].videoselect = true
           this.items[6].videoselect = false
           this.items[7].videoselect = false
+          this.showcheck = false
         } else if (this.checkclass2 && this.checkclass3) {
           this.items[0].videoselect = false
           this.items[1].videoselect = false
@@ -275,6 +296,7 @@ export default {
           this.items[5].videoselect = true
           this.items[6].videoselect = true
           this.items[7].videoselect = true
+          this.showcheck = false
         } else if (this.checkclass1) {
           this.items[0].videoselect = true
           this.items[1].videoselect = true
@@ -284,6 +306,7 @@ export default {
           this.items[5].videoselect = true
           this.items[6].videoselect = false
           this.items[7].videoselect = false
+          this.showcheck = false
         } else if (this.checkclass2) {
           this.items[0].videoselect = false
           this.items[1].videoselect = false
@@ -293,6 +316,7 @@ export default {
           this.items[5].videoselect = true
           this.items[6].videoselect = true
           this.items[7].videoselect = true
+          this.showcheck = false
         } else if (this.checkclass3) {
           this.items[0].videoselect = false
           this.items[1].videoselect = false
@@ -302,8 +326,29 @@ export default {
           this.items[5].videoselect = true
           this.items[6].videoselect = false
           this.items[7].videoselect = false
+          this.showcheck = false
         }
       }
+    },
+    refresh() {
+      this.$swal({
+        title: 'แจ้งเตือน',
+        text: 'อ่านรายละเอียดและระบุอาการของท่านใหม่ ',
+        icon: 'success',
+        confirmButtonText: 'ตกลง',
+      })
+      this.showcheck = true
+      this.items[0].videoselect = false
+      this.items[1].videoselect = false
+      this.items[2].videoselect = false
+      this.items[3].videoselect = false
+      this.items[4].videoselect = false
+      this.items[5].videoselect = false
+      this.items[6].videoselect = false
+      this.items[7].videoselect = false
+      this.checkclass1 = ''
+      this.checkclass2 = ''
+      this.checkclass3 = ''
     },
   },
 
