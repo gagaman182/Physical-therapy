@@ -1,6 +1,6 @@
 <template>
- <v-col cols="12">
- <v-card class="mx-auto" outlined   >
+ <v-col   cols="12">
+ <v-card   class="mx-auto" outlined   >
         <v-list-item three-line>
           <v-list-item-content>
             <v-row>
@@ -21,10 +21,11 @@
                 ></v-checkbox>
               </v-col>
             </v-row>
-            <div class="title text-center text white--text " v-bind:style="{ backgroundColor: statecolor}">สถานะการเล่นวิดีโอ: {{state}}</div>
-            <div v-blur="blurConfig" class="text-center" >
-              <v-card class="mx-auto" outlined  :disabled = clickvideo >
+            <div  class="title text-center text white--text " v-bind:style="{ backgroundColor: statecolor}">สถานะการเล่นวิดีโอ: {{state}}</div>
+            <div  v-blur="blurConfig" class="text-center"  >
+              <v-card class="mx-auto" outlined  :disabled = clickvideo   >
               <youtube
+             
                 id="youtube"
                 :video-id="videoid"
                 ref="youtube"
@@ -67,6 +68,8 @@ export default {
       type:String,
       defalut:null
     },
+  
+     
     
   },
 
@@ -83,7 +86,8 @@ export default {
       seevideo: false,
       state:"ยังไม่เล่น",
       statecolor:'#fb3640',
-      clickvideo:true
+      clickvideo:true,
+    
     
     }
   },
@@ -139,6 +143,7 @@ export default {
   },
 
   mounted() {
+    this.showvideos = this.showvd
     if (this.blurConfig.isBlurred) {
       this.pauseVideos()
       this.statecolor = '#fb3640'

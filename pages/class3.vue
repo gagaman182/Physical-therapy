@@ -1,19 +1,17 @@
 <template>
   <v-row>
     <v-col cols="12" class="text-center">
-      <v-toolbar color="#efbbcf" class="main-header-color">
+      <v-toolbar color="#ce1f6a" class="white--text">
         <v-card-title class="headline font-weight-bold">
-          <v-icon class="text--darken-2 main-header-color" medium
-            >mdi-food
-          </v-icon>
+          <v-icon class="text--darken-2 white--text" medium>mdi-food </v-icon>
           &nbsp; อาหารฝึกกลืน
         </v-card-title>
       </v-toolbar>
       <v-alert
         border="bottom"
         colored-border
-        class="header-color"
-        color="#efbbcf"
+        class="header-color text-center display-1"
+        color="#ce1f6a"
         elevation="2"
         ><h3>Functional Oral Intake Score</h3>
       </v-alert>
@@ -99,8 +97,11 @@ export default {
 </script>
 
 <style scoped>
-.main-header-color {
+/* .main-header-color {
   color: #ef4f4f;
+} */
+.header-color {
+  color: #ce1f6a;
 }
 iframe {
   width: 100%;

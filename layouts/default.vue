@@ -6,7 +6,7 @@
       :clipped="clipped"
       fixed
       app
-      color="#efbbcf"
+      color="#ce1f6a"
     >
       <v-list>
         <v-list-item
@@ -17,18 +17,20 @@
           exact
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon class="white--text font-weight-bold">{{
+              item.icon
+            }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title
-              class="main-header-color font-weight-bold"
+              class="white--text font-weight-bold"
               v-text="item.title"
             />
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app color="#8675a9" dark>
+    <v-app-bar :clipped-left="clipped" fixed app color="#ff9a8c" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <!-- <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
@@ -61,7 +63,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer> -->
-    <v-footer :absolute="!fixed" app color="#8675a9" dark>
+    <v-footer :absolute="!fixed" app color="#ff9a8c" dark>
       <span
         >&copy; {{ new Date().getFullYear() }}
         กลุ่มงานเวชกรรมฟื้นฟู โรงพยาบาลหาดใหญ่ โทร 074-273100 ต่อ 8207
@@ -79,15 +81,20 @@ export default {
       fixed: true,
       items: [
         {
-          icon: 'mdi-desktop-mac-dashboard ',
-          title: 'หน้าแรก',
+          icon: 'mdi-face-recognition ',
+          title: 'บุคคลทั่วไป',
           to: '/',
         },
-        // {
-        //   icon: 'mdi-chart-bubble',
-        //   title: 'Inspire',
-        //   to: '/inspire',
-        // },
+        {
+          icon: 'mdi-account-settings ',
+          title: 'ผู้รับบริการ',
+          to: '/patient',
+        },
+        {
+          icon: 'mdi-doctor ',
+          title: 'บันทึกการให้บริการ',
+          to: '/doctor',
+        },
       ],
       miniVariant: false,
       right: false,
@@ -98,7 +105,7 @@ export default {
 }
 </script>
 <style scoped>
-.main-header-color {
+/* .main-header-color {
   color: #ef4f4f;
-}
+} */
 </style>

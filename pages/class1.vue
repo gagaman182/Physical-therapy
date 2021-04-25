@@ -1,11 +1,9 @@
 <template>
   <v-row>
-    <v-col cols="12" class="text-center">
-      <v-toolbar color="#efbbcf" class="main-header-color">
-        <v-card-title class="headline font-weight-bold">
-          <v-icon class="text--darken-2 main-header-color" medium
-            >mdi-jabber
-          </v-icon>
+    <v-col cols="12" class="text-center tex">
+      <v-toolbar color="#ce1f6a" class="white--text">
+        <v-card-title class="headline font-weight-bold white--text">
+          <v-icon class="text--darken-2 white--text" medium>mdi-jabber </v-icon>
           &nbsp; ความรู้ทั่วไป
         </v-card-title>
       </v-toolbar>
@@ -51,9 +49,9 @@ export default {
 </script>
 
 <style scoped>
-.main-header-color {
+/* .main-header-color {
   color: #ef4f4f;
-}
+} */
 iframe {
   width: 100%;
   max-width: 650px; /* Also helpful. Optional. */

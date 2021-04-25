@@ -1,9 +1,9 @@
 <template>
   <v-row>
     <v-col cols="12" class="text-center">
-      <v-toolbar color="#efbbcf" class="main-header-color">
+      <v-toolbar color="#ce1f6a" class="white--text">
         <v-card-title class="headline font-weight-bold">
-          <v-icon class="text--darken-2 main-header-color" medium>
+          <v-icon class="text--darken-2 white--text" medium>
             mdi-hospital-building
           </v-icon>
           &nbsp; ติดต่อเรา

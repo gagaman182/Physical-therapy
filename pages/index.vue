@@ -2,7 +2,7 @@
   <v-container grid-list-xlfluid>
     <v-layout row wrap>
       <v-col cols="12">
-        <v-toolbar color="#c3aed6" class="main-header-color">
+        <v-toolbar color="#ce1f6a" class="white--text">
           <v-card-title class="headline font-weight-bold">
             ภาวะกลืนลำบาก
           </v-card-title>
@@ -12,46 +12,57 @@
           <v-alert
             border="bottom"
             colored-border
-            class="header-color"
-            color="#ffe78f"
+            class="header-color text-center display-1"
+            color="#ce1f6a"
             elevation="2"
             ><h4>กลืนลำบาก บำบัดไม่ยาก หากรู้วิธี.</h4>
           </v-alert>
           <v-row align="center" class="mx-2">
             <v-col cols="12" md="4">
-              <v-card class="mx-auto" outlined color="#c3aed6">
+              <v-card
+                class="mx-auto"
+                outlined
+                color="#ff9a8c"
+                style="height: 220px"
+              >
                 <v-list-item three-line>
                   <v-list-item-content>
                     <v-list-item-title class="headline mb-1 header-color">
                       ความรู้ทั่วไป
                     </v-list-item-title>
                   </v-list-item-content>
-                  <v-icon size="85px" color="#ffe78f">mdi-jabber </v-icon>
+                  <v-icon size="150px" color="#c67ace">mdi-jabber </v-icon>
                 </v-list-item>
 
                 <v-card-actions>
                   <v-btn
                     outlined
-                    color="#ffe78f"
+                    color="#d8f8b7"
                     to="/class1"
                     target="_blank"
                     nuxt
+                    x-large
                   >
-                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
-                    <h3>เลือก</h3>
+                    <v-icon size="40px">mdi-cursor-default-click </v-icon>
+                    <p class="headline text-decoration-underline">คลิก</p>
                   </v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>
             <v-col cols="12" md="4">
-              <v-card class="mx-auto" outlined color="#c3aed6">
+              <v-card
+                class="mx-auto"
+                outlined
+                color="#ff9a8c"
+                style="height: 220px"
+              >
                 <v-list-item three-line>
                   <v-list-item-content>
                     <v-list-item-title class="headline mb-1 header-color">
-                      การบำบัดฟื้นฟู
+                      การบำบัดฟื้นฟูการกลืน (1-4)
                     </v-list-item-title>
                   </v-list-item-content>
-                  <v-icon size="85px" color="#ffe78f"
+                  <v-icon size="150px" color="#c67ace"
                     >mdi-calendar-heart
                   </v-icon>
                 </v-list-item>
@@ -59,76 +70,79 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    color="#ffe78f"
+                    color="#d8f8b7"
                     to="/class2"
                     target="_blank"
                     nuxt
+                    x-large
                   >
-                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
-                    <h3>เลือก</h3>
+                    <v-icon size="40px">mdi-cursor-default-click </v-icon>
+                    <p class="headline text-decoration-underline">คลิก</p>
                   </v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>
             <v-col cols="12" md="4">
-              <v-card class="mx-auto" outlined color="#c3aed6">
+              <v-card class="mx-auto" outlined color="#ff9a8c">
                 <v-list-item three-line>
                   <v-list-item-content>
                     <v-list-item-title class="headline mb-1 header-color">
                       อาหารฝึกกลืน
                     </v-list-item-title>
                   </v-list-item-content>
-                  <v-icon size="85px" color="#ffe78f">mdi-food </v-icon>
+                  <v-icon size="150px" color="#c67ace">mdi-food </v-icon>
                 </v-list-item>
 
                 <v-card-actions>
                   <v-btn
                     outlined
-                    color="#ffe78f"
+                    color="#d8f8b7"
                     to="/class3"
                     target="_blank"
                     nuxt
+                    x-large
                   >
-                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
-                    <h3>เลือก</h3>
+                    <v-icon size="40px">mdi-cursor-default-click </v-icon>
+                    <p class="headline text-decoration-underline">คลิก</p>
                   </v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>
             <v-col cols="12" md="4">
-              <v-card class="mx-auto" outlined color="#c3aed6">
+              <v-card class="mx-auto" outlined color="#ff9a8c">
                 <v-list-item three-line>
                   <v-list-item-content>
                     <v-list-item-title class="headline mb-1 header-color">
-                      การฝึกหายใจและการฝึกไอ
+                      การฝึกหายใจและการฝึกไอ (6)
                     </v-list-item-title>
                   </v-list-item-content>
-                  <v-icon size="85px" color="#ffe78f">mdi-airballoon </v-icon>
+                  <v-icon size="150px" color="#c67ace">mdi-airballoon </v-icon>
                 </v-list-item>
 
                 <v-card-actions>
                   <v-btn
                     outlined
-                    color="#ffe78f"
+                    color="#d8f8b7"
                     to="/class4"
                     target="_blank"
                     nuxt
+                    x-large
                   >
-                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
-                    <h3>เลือก</h3>
+                    <v-icon size="40px">mdi-cursor-default-click </v-icon>
+                    <p class="headline text-decoration-underline">คลิก</p>
                   </v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>
             <v-col cols="12" md="4">
-              <v-card class="mx-auto" outlined color="#c3aed6">
+              <v-card class="mx-auto" outlined color="#ff9a8c">
                 <v-list-item three-line>
                   <v-list-item-content>
                     <v-list-item-title class="headline mb-1 header-color">
-                      การทำความสะอาดช่องปาก
+                      การทำความสะอาดช่องปาก (5)
                     </v-list-item-title>
                   </v-list-item-content>
-                  <v-icon size="85px" color="#ffe78f"
+                  <v-icon size="150px" color="#c67ace"
                     >mdi-toothbrush-paste
                   </v-icon>
                 </v-list-item>
@@ -136,26 +150,27 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    color="#ffe78f"
+                    color="#d8f8b7"
                     to="/class5"
                     target="_blank"
                     nuxt
+                    x-large
                   >
-                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
-                    <h3>เลือก</h3>
+                    <v-icon size="40px">mdi-cursor-default-click </v-icon>
+                    <p class="headline text-decoration-underline">คลิก</p>
                   </v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>
             <v-col cols="12" md="4">
-              <v-card class="mx-auto" outlined color="#c3aed6">
+              <v-card class="mx-auto" outlined color="#ff9a8c">
                 <v-list-item three-line>
                   <v-list-item-content>
                     <v-list-item-title class="headline mb-1 header-color">
                       ติดต่อเรา
                     </v-list-item-title>
                   </v-list-item-content>
-                  <v-icon size="85px" color="#ffe78f"
+                  <v-icon size="150px" color="#c67ace"
                     >mdi-hospital-building
                   </v-icon>
                 </v-list-item>
@@ -163,13 +178,14 @@
                 <v-card-actions>
                   <v-btn
                     outlined
-                    color="#ffe78f"
+                    color="#d8f8b7"
                     to="/class6"
                     target="_blank"
                     nuxt
+                    x-large
                   >
-                    <v-icon size="30px">mdi-cursor-default-click </v-icon>
-                    <h3>เลือก</h3>
+                    <v-icon size="40px">mdi-cursor-default-click </v-icon>
+                    <p class="headline text-decoration-underline">คลิก</p>
                   </v-btn>
                 </v-card-actions>
               </v-card>
@@ -188,10 +204,10 @@ export default {
 </script>
 <style scoped>
 .header-color {
-  color: #be5683;
+  color: #ce1f6a;
 }
 
 .main-header-color {
-  color: #ffe78f;
+  color: #c67ace;
 }
 </style>
